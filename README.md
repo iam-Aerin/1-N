@@ -177,7 +177,7 @@ class Article(models.Model):
 
 ## 모델 → 데이터베이스 변환
 
-1. 마이그리얼생성
+1. migrat;ions
 ```bash
 python manage.py makemigrations
 ```
@@ -264,7 +264,7 @@ class Comment(models.Model):
 | Model | 데이터 구조 정의 (DB와 연결) |
 | Form | 사용자 입력 처리 |
 | ModelForm | 모델 기반으로 자동 생성된 폼 |
-| 마이그리션 | 파이썬 코드 → 데이터베이스 반영 |
+| migration | 파이썬 코드 → 데이터베이스 반영 |
 | admin | 관리자 페이지를 통해 CRUD 가능 |
 | 1:N 관계 | 하나의 객체가 여러 객체를 가지는 관계 |
 | templates | HTML 템플릿 저장 위치 |
