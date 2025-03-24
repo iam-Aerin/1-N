@@ -65,7 +65,7 @@
 
 데이터 정규화는 구조를 더 **깔끔하고 확장 가능하게** 만들어 줍니다. 댓글 기능을 포함한 게시판 설계에서 필수적인 개념이에요. 🔧
 ---
-# Django 설정정
+# Django 설정 및 ModelForm 기초
 
 ## 기본 개념 정보
 
@@ -81,7 +81,7 @@
 
 ---
 
-## ⚙️ Django 프로젝트 초기 설정
+## Django 프로젝트 초기 설정
 
 ### 1. 가상환경 설정
 
@@ -124,7 +124,7 @@ django-admin startapp articles
 ```
 
 
-> 앱 이름 추가가
+> 앱 이름 추가
 ```python
 # settings.py
 INSTALLED_APPS = [
