@@ -33,12 +33,15 @@ def index(request):
 
 # Read (detail -> 기능 구현 (게시물 자세히 보기))
 def detail(request, id):
-	article = Article.objects.get(id=id)
+	article = Article.objects.get(id=id) # 전체에서 하나의 article을 고르고
+	comments = article.comment_set.all() # 하나의 article에 있는 모든 댓글을 가져오기
+ 
 	form = CommentForm()
 
 	context = {
 		'article' : article,
 		'form' : form,
+		'comments': comments,
 	}
 
 	return render(request, 'detail.html', context)
