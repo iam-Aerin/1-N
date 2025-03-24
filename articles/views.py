@@ -22,6 +22,7 @@ def create(request):
 	return render(request, 'create.html', context)
 
 
+# Read 함수 만들기기
 def index(request):
 	articles = Article.objects.all()
 
@@ -30,7 +31,7 @@ def index(request):
 	}
 	return render(request, 'index.html', context)
 
-
+# Read (detail -> 기능 구현 (게시물 자세히 보기))
 def detail(request, id):
 	article = Article.objects.get(id=id)
 
@@ -39,3 +40,22 @@ def detail(request, id):
 	}
 
 	return render(request, 'detail.html', context)
+
+
+def update(request, id):
+	article = Article.objects.get(id=id) 
+
+	if request.method == 'POST':
+		form = ArticleForm(request.POST, instance=article) # 새로운 데이터 (request.POST) & 뒤는 기존 정보의 article.
+		if form.is_valid():
+				form.save()
+				return redirect('articles:detail', id=id)
+		
+	else:
+		form = ArticleForm(instance=article) # 기존 게시물을 폼에 넣자
+
+	context = {
+		'form' : form,
+	}
+
+	return render(request, 'update.html', context)

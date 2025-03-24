@@ -10,6 +10,8 @@ urlpatterns = [
     path('', views.index, name ='index'),
     path('<int:id>/', views.detail, name='detail'),
      # Update
+    path('<int:id>/update/', views.update, name='update'),
+
 
      # Delete
 ]
