@@ -2,9 +2,10 @@
 
 {% block body %}
 
+<!-- GET요청의 Create를 다시 POST Create  => 내 자신을 호출 : GET / POST 둘다 하나의 articles/create에 위치하므로 결국 자기자신을 호출--> 
     <form action="" method="POST">
         {% csrf_token %}
         {{form}}
-        <input type="submit" >
+        <input type="submit">
     </form>
 {% endblock %}

@@ -8,5 +8,7 @@ class Article(models.Model):
      created_at = models.DateTimeField(auto_now_add=True)  
      updated_at = models.DateTimeField(auto_now=True)   
 
-# class Comment(models.Model):
-#      pass
+class Comment(models.Model):
+     content = models.TextField()
+     article = models.ForeignKey(Article, on_delete=models.CASCADE) # 부모가 지워졌을때, 자식이 같이 지워진다.
+     # 1:N 관계에서 1은 Article, N은 Comment이다.
