@@ -138,7 +138,25 @@ python manage.py startapp <app-name>
 ```
 
 ---
+## 🌐 템플릿 설정
 
+### 프로젝트 전역 템플릿 폴더 생성
+
+1. `templates/` 디렉터리 생성
+2. `settings.py`에 템플릿 건 가져오기
+
+```python
+TEMPLATES = [
+    {
+        ...
+        'DIRS': [BASE_DIR / 'templates'],
+        ...
+    },
+]
+```
+---
+`base.html` 파일 생성 후 기본 구조 작성. ( `templates/base.html`)
+---
 ## 🧱 모델 정의: `models.py`
 
 ```python
@@ -191,22 +209,7 @@ python manage.py createsuperuser
 
 ---
 
-## 🌐 템플릿 설정
 
-### 프로젝트 전역 템플릿 폴더 생성
-
-1. `templates/` 디렉터리 생성
-2. `settings.py`에 템플릿 건 가져오기
-
-```python
-TEMPLATES = [
-    {
-        ...
-        'DIRS': [BASE_DIR / 'templates'],
-        ...
-    },
-]
-```
 
 ---
 
