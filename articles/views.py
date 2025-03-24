@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from . forms import ArticleForm, CommentForm
-from .models import Article
+from .models import Article, Comment
 # Create your views here.
 
 # Create 함수 만들기
@@ -22,7 +22,7 @@ def create(request):
 	return render(request, 'create.html', context)
 
 
-# Read 함수 만들기기
+# Read 함수 만들기
 def index(request):
 	articles = Article.objects.all()
 
@@ -88,3 +88,10 @@ def comment_create(request, article_id):
                      return redirect('articles:detail', id=article_id)
        else:
               return redirect('articles:index')
+       
+       
+# Comment Delete 함수 만들기
+def comment_delete(request, article_id, id):
+    comment = Comment.objects.get(id=id)
+    comment.delete()
+    return redirect('articles:detail', id=article_id)

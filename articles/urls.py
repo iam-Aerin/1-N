@@ -19,5 +19,8 @@ urlpatterns = [
      # Comment Create
      path('<int:article_id>/comments/create/', views.comment_create, name='comment_create'),
     #  'articles/10/comments/create/'
+    
+    # Comment Delete
+    path('<int:article_id>/comments/<int:id>/delete/', views.comment_delete, name='comment_delete'),
      
 ]
