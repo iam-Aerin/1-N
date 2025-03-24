@@ -14,4 +14,5 @@ urlpatterns = [
 
 
      # Delete
+     path('<int:id>/delete/', views.delete, name='delete'),
 ]

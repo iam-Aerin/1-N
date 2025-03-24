@@ -59,3 +59,14 @@ def update(request, id):
 	}
 
 	return render(request, 'update.html', context)
+
+
+# Delete 함수 만들기
+
+def delete(request, id):
+       article = Article.objects.get(id=id)
+       article.delete()
+       
+       return redirect('articles:index')
+       
+       
